@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FAST NUCES GPA Calculator — Calculate your SGPA and CGPA instantly with accurate FAST University grading rules. Ben 10 Alien Force themed student utility." />
+  <meta name="keywords" content="FAST NUCES, GPA Calculator, SGPA, CGPA, FAST University, Grade Calculator" />
+  <title>FAST NUCES GPA Calculator | Omnitrix Edition</title>
+
+  <!-- Google Fonts: Orbitron (alien-tech display) + Exo 2 (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon: inline Omnitrix SVG -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="%23111"/><circle cx="50" cy="50" r="40" fill="%2300e676"/><path d="M14 50 L50 20 L86 50 L50 80 Z" fill="%23111"/><path d="M26 50 L50 30 L74 50 L50 70 Z" fill="%2300e676"/></svg>' />
+</head>
+<body>
+
+  <!-- ═══════════════ 1. HEADER (Sticky Navigation) ═══════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="FAST NUCES GPA Calculator — Home">
+        <!-- Omnitrix-style logo (original SVG, copyright-safe) -->
+        <svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" class="omni-outer"/>
+          <circle cx="50" cy="50" r="38" class="omni-face"/>
+          <path d="M16 50 L50 22 L84 50 L50 78 Z" class="omni-diamond-dark"/>
+          <path d="M28 50 L50 32 L72 50 L50 68 Z" class="omni-diamond-green"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">FAST NUCES</span>
+          <span class="brand-sub">GPA Calculator</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#calculator" class="nav-link">Calculator</a></li>
+        <li><a href="#rules" class="nav-link">Rules</a></li>
+        <li><a href="#grading" class="nav-link">Grading Scale</a></li>
+        <li><a href="#quotes" class="nav-link">Motivation Quotes</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light theme" title="Toggle theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════ 2. HERO SECTION ═══════════════ -->
+    <section class="hero" id="home">
+      <!-- Floating alien-energy shapes -->
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+        <span class="hex hex-1"></span>
+        <span class="hex hex-2"></span>
+        <span class="hex hex-3"></span>
+        <span class="scanline"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="hero-eyebrow"><span class="pulse-dot"></span> Omnitrix Edition · FAST University</p>
+          <h1 class="hero-title">Wanna Check <span class="glow-text">Your GPA?</span></h1>
+          <p class="hero-sub">Calculate your FAST University SGPA and CGPA instantly with accurate grading rules.</p>
+          <div class="hero-actions">
+            <a href="#calculator" class="btn btn-primary btn-lg" data-scroll>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+              Calculate Now
+            </a>
+            <a href="#rules" class="btn btn-ghost btn-lg" data-scroll>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              Learn Rules
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num" data-count="4.00">0</span><span class="stat-label">Max GPA</span></div>
+            <div class="stat"><span class="stat-num" data-count="12">0</span><span class="stat-label">Grade Levels</span></div>
+            <div class="stat"><span class="stat-num" data-count="100">0</span><span class="stat-label">% Accurate</span></div>
+          </div>
+        </div>
+
+        <!-- Hero illustration: original alien-tech Omnitrix artwork (SVG, copyright-safe) -->
+        <div class="hero-art reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 400" class="omnitrix-hero">
+            <defs>
+              <radialGradient id="omniGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00e676" stop-opacity="0.55"/>
+                <stop offset="70%" stop-color="#00e676" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#00e676" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="dialMetal" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3b4252"/>
+                <stop offset="100%" stop-color="#14181f"/>
+              </linearGradient>
+            </defs>
+            <!-- glow halo -->
+            <circle cx="200" cy="200" r="190" fill="url(#omniGlow)" class="halo"/>
+            <!-- rotating outer ring -->
+            <g class="ring-rotate">
+              <circle cx="200" cy="200" r="150" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="12 18" opacity="0.7"/>
+              <circle cx="200" cy="200" r="168" fill="none" stroke="#00e676" stroke-width="1" stroke-dasharray="4 26" opacity="0.35"/>
+            </g>
+            <!-- watch dial -->
+            <circle cx="200" cy="200" r="130" fill="url(#dialMetal)" stroke="#0a0d12" stroke-width="6"/>
+            <!-- dial studs -->
+            <g fill="#00e676" opacity="0.9">
+              <circle cx="200" cy="80" r="7"/><circle cx="200" cy="320" r="7"/>
+              <circle cx="80" cy="200" r="7"/><circle cx="320" cy="200" r="7"/>
+              <circle cx="115" cy="115" r="5"/><circle cx="285" cy="115" r="5"/>
+              <circle cx="115" cy="285" r="5"/><circle cx="285" cy="285" r="5"/>
+            </g>
+            <!-- green face -->
+            <circle cx="200" cy="200" r="100" fill="#00c853" class="dial-face"/>
+            <circle cx="200" cy="200" r="100" fill="none" stroke="#003d1f" stroke-width="5"/>
+            <!-- hourglass diamond -->
+            <path d="M104 200 L200 118 L296 200 L200 282 Z" fill="#0a0d12"/>
+            <path d="M136 200 L200 146 L264 200 L200 254 Z" fill="#00e676" class="inner-diamond"/>
+            <!-- energy particles -->
+            <g class="particles" fill="#7CFFB2">
+              <circle cx="330" cy="120" r="4" class="p p1"/>
+              <circle cx="70" cy="140" r="3" class="p p2"/>
+              <circle cx="340" cy="270" r="3.5" class="p p3"/>
+              <circle cx="60" cy="290" r="4" class="p p4"/>
+              <circle cx="200" cy="40" r="3" class="p p5"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 3. GPA CALCULATOR SECTION ═══════════════ -->
+    <section class="section calculator-section" id="calculator">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Transformation Chamber</p>
+          <h2 class="section-title">GPA <span class="glow-text">Calculator</span></h2>
+          <p class="section-sub">Select your mode, enter your subjects, and hit calculate — hero time.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs reveal" role="tablist" aria-label="Calculator mode">
+          <button class="tab active" id="tabSgpa" role="tab" aria-selected="true" aria-controls="sgpaPanel">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            SGPA Calculator
+          </button>
+          <button class="tab" id="tabCgpa" role="tab" aria-selected="false" aria-controls="cgpaPanel">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+            CGPA Calculator
+          </button>
+          <span class="tab-glider" id="tabGlider"></span>
+        </div>
+
+        <!-- ── SGPA Panel ── -->
+        <div class="panel card reveal" id="sgpaPanel" role="tabpanel" aria-labelledby="tabSgpa">
+          <div class="panel-head">
+            <h3>Semester Subjects</h3>
+            <p>Add every course you took this semester.</p>
+          </div>
+
+          <div class="rows-head sgpa-cols">
+            <span>Course Name <em>(optional)</em></span>
+            <span>Credit Hours</span>
+            <span>Grade</span>
+            <span class="sr-only">Remove</span>
+          </div>
+          <div class="rows" id="sgpaRows"><!-- rows injected by JS --></div>
+
+          <div class="panel-actions">
+            <button class="btn btn-ghost" id="addSubjectBtn">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+              Add Subject
+            </button>
+            <div class="panel-actions-right">
+              <button class="btn btn-danger-ghost" id="resetSgpaBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Reset
+              </button>
+              <button class="btn btn-primary" id="calcSgpaBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Calculate GPA
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CGPA Panel ── -->
+        <div class="panel card reveal hidden" id="cgpaPanel" role="tabpanel" aria-labelledby="tabCgpa">
+          <div class="panel-head">
+            <h3>Completed Semesters</h3>
+            <p>Enter the GPA and total credit hours of each completed semester.</p>
+          </div>
+
+          <div class="rows-head cgpa-cols">
+            <span>Semester <em>(optional)</em></span>
+            <span>Semester GPA</span>
+            <span>Credit Hours</span>
+            <span class="sr-only">Remove</span>
+          </div>
+          <div class="rows" id="cgpaRows"><!-- rows injected by JS --></div>
+
+          <div class="panel-actions">
+            <button class="btn btn-ghost" id="addSemesterBtn">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+              Add Semester
+            </button>
+            <div class="panel-actions-right">
+              <button class="btn btn-danger-ghost" id="resetCgpaBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Reset
+              </button>
+              <button class="btn btn-primary" id="calcCgpaBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Calculate CGPA
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════ 4. RESULT SECTION ═══════════════ -->
+        <div class="result hidden" id="resultSection" aria-live="polite">
+          <div class="result-top card reveal-instant">
+            <!-- Animated circular ring -->
+            <div class="ring-wrap">
+              <svg class="ring" viewBox="0 0 220 220">
+                <circle class="ring-bg" cx="110" cy="110" r="96"/>
+                <circle class="ring-fg" id="ringFg" cx="110" cy="110" r="96"/>
+              </svg>
+              <div class="ring-center">
+                <span class="ring-value" id="ringValue">0.00</span>
+                <span class="ring-label" id="ringLabel">SGPA</span>
+              </div>
+            </div>
+
+            <!-- Metric cards -->
+            <div class="metrics">
+              <div class="metric-card">
+                <span class="metric-label" id="metricGpaLabel">GPA</span>
+                <span class="metric-value" id="metricGpa">—</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Percentage</span>
+                <span class="metric-value" id="metricPct">—</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Total Credit Hours</span>
+                <span class="metric-value" id="metricCh">—</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label" id="metricCoursesLabel">Courses</span>
+                <span class="metric-value" id="metricCourses">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course-wise table -->
+          <div class="card table-card" id="tableCard">
+            <div class="panel-head">
+              <h3 id="tableTitle">Course-wise Result</h3>
+              <p>Click a column header to sort.</p>
+            </div>
+            <div class="table-scroll">
+              <table class="result-table" id="resultTable">
+                <thead id="resultThead"></thead>
+                <tbody id="resultTbody"></tbody>
+                <tfoot id="resultTfoot"></tfoot>
+              </table>
+            </div>
+          </div>
+
+          <!-- Summary card + download -->
+          <div class="card summary-card">
+            <div class="panel-head"><h3>Summary</h3></div>
+            <div class="summary-grid" id="summaryGrid"></div>
+            <div class="summary-actions">
+              <button class="btn btn-ghost" id="downloadBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Result
+              </button>
+              <button class="btn btn-primary" id="pdfBtn">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Save as PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 5. RULES SECTION ═══════════════ -->
+    <section class="section rules-section" id="rules">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Plumber's Handbook</p>
+          <h2 class="section-title">Calculation <span class="glow-text">Rules</span></h2>
+          <p class="section-sub">Everything a first-semester student needs — formulas, steps, worked examples, and the exact logic this site runs on.</p>
+        </div>
+
+        <div class="rules-grid">
+          <!-- SGPA rules -->
+          <article class="card rule-card reveal">
+            <h3 class="rule-title">SGPA Calculation</h3>
+            <p class="rule-desc">SGPA (Semester GPA) measures your performance in <strong>one semester only</strong>.</p>
+
+            <div class="formula-box">
+              <span class="formula-label">Formula</span>
+              <code>GPA = Σ (Grade Points × Credit Hours) ÷ Σ (Credit Hours)</code>
+            </div>
+
+            <h4>Step-by-Step Method</h4>
+            <ol class="steps">
+              <li>List all courses taken in the semester.</li>
+              <li>Write the credit hours assigned to each course.</li>
+              <li>Convert each letter grade into grade points (see Grading Scale below).</li>
+              <li>Multiply grade points × credit hours = <strong>Quality Points (QP)</strong> for that course.</li>
+              <li>Add the quality points from all courses.</li>
+              <li>Divide total quality points by total credit hours.</li>
+            </ol>
+
+            <h4>Worked Example</h4>
+            <div class="table-scroll">
+              <table class="mini-table">
+                <thead><tr><th>Course</th><th>CH</th><th>Grade</th><th>GP</th><th>QP = GP×CH</th></tr></thead>
+                <tbody>
+                  <tr><td>Programming Fundamentals</td><td>4</td><td>A</td><td>4.00</td><td>16.00</td></tr>
+                  <tr><td>Calculus</td><td>3</td><td>B+</td><td>3.33</td><td>9.99</td></tr>
+                  <tr><td>English</td><td>3</td><td>A-</td><td>3.67</td><td>11.01</td></tr>
+                  <tr><td>ICT Lab</td><td>1</td><td>B</td><td>3.00</td><td>3.00</td></tr>
+                </tbody>
+                <tfoot><tr><td>Total</td><td>11</td><td>—</td><td>—</td><td>40.00</td></tr></tfoot>
+              </table>
+            </div>
+            <div class="formula-box result-box">
+              <code>SGPA = 40.00 ÷ 11 = <strong>3.64</strong></code>
+            </div>
+
+            <h4>Backend Logic (how this site computes it)</h4>
+            <pre class="code-block"><code>totalQP = 0; totalCH = 0;
+for each course:
+    gp = gradeMap[grade]        // e.g. "B+" → 3.33
+    qp = gp * creditHours       // quality points
+    totalQP += qp
+    totalCH += creditHours
+SGPA = totalQP / totalCH        // rounded to 2 decimals</code></pre>
+            <p class="note">Mathematically, this is a <strong>weighted average</strong> — courses with more credit hours pull your GPA more strongly toward their grade.</p>
+          </article>
+
+          <!-- CGPA rules -->
+          <article class="card rule-card reveal">
+            <h3 class="rule-title">CGPA Calculation</h3>
+            <p class="rule-desc">CGPA (Cumulative GPA) measures your performance across <strong>all completed semesters</strong>.</p>
+
+            <div class="formula-box">
+              <span class="formula-label">Formula</span>
+              <code>CGPA = Total Quality Points of All Semesters ÷ Total Credit Hours Completed</code>
+            </div>
+
+            <h4>Step-by-Step Method</h4>
+            <ol class="steps">
+              <li>Collect GPA and credit hours from each completed semester.</li>
+              <li>Multiply each semester GPA × its credit hours = semester quality points.</li>
+              <li>Add all semester quality points.</li>
+              <li>Add all completed credit hours.</li>
+              <li>Divide total quality points by total credit hours.</li>
+            </ol>
+
+            <h4>Worked Example</h4>
+            <div class="table-scroll">
+              <table class="mini-table">
+                <thead><tr><th>Semester</th><th>GPA</th><th>CH</th><th>QP = GPA×CH</th></tr></thead>
+                <tbody>
+                  <tr><td>Semester 1</td><td>3.20</td><td>17</td><td>54.40</td></tr>
+                  <tr><td>Semester 2</td><td>3.60</td><td>18</td><td>64.80</td></tr>
+                  <tr><td>Semester 3</td><td>3.40</td><td>16</td><td>54.40</td></tr>
+                </tbody>
+                <tfoot><tr><td>Total</td><td>—</td><td>51</td><td>173.60</td></tr></tfoot>
+              </table>
+            </div>
+            <div class="formula-box result-box">
+              <code>CGPA = 173.60 ÷ 51 = <strong>3.40</strong></code>
+            </div>
+
+            <h4>Backend Logic (how this site computes it)</h4>
+            <pre class="code-block"><code>totalQP = 0; totalCH = 0;
+for each semester:
+    qp = semesterGPA * creditHours
+    totalQP += qp
+    totalCH += creditHours
+CGPA = totalQP / totalCH        // rounded to 2 decimals</code></pre>
+
+            <h4>SGPA vs CGPA — the difference</h4>
+            <ul class="diff-list">
+              <li><strong>SGPA</strong> = snapshot of <em>one</em> semester.</li>
+              <li><strong>CGPA</strong> = running average of <em>your entire degree so far</em>.</li>
+              <li>CGPA is a credit-hour-weighted average of your SGPAs — a heavy semester influences it more than a light one.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 6. GRADING SCALE SECTION ═══════════════ -->
+    <section class="section grading-section" id="grading">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Alien Database</p>
+          <h2 class="section-title">Grading <span class="glow-text">Scale</span></h2>
+          <p class="section-sub">Official FAST NUCES grading criteria. QP shown for a standard 3 credit-hour course.</p>
+        </div>
+
+        <div class="card table-card reveal">
+          <div class="table-scroll">
+            <table class="grading-table">
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Percentage Range</th>
+                  <th>Grade Points (GP)</th>
+                  <th>Quality Points Formula</th>
+                  <th>QP (3 CH)</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody id="gradingTbody"><!-- filled by JS from the single source-of-truth grade map --></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 7. MOTIVATION QUOTES SECTION ═══════════════ -->
+    <section class="section quotes-section" id="quotes">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Hero Time</p>
+          <h2 class="section-title">Motivation <span class="glow-text">Quotes</span></h2>
+          <p class="section-sub">A fresh dose of energy, fetched live from a free public quotes API.</p>
+        </div>
+
+        <div class="quote-card card reveal" id="quoteCard">
+          <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <div class="quote-body" id="quoteBody">
+            <div class="quote-loader" id="quoteLoader"><span></span><span></span><span></span></div>
+            <blockquote class="quote-text" id="quoteText"></blockquote>
+            <cite class="quote-author" id="quoteAuthor"></cite>
+          </div>
+          <button class="btn btn-primary" id="newQuoteBtn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+            Generate a New Quote
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════ 8. FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" class="omni-outer"/>
+          <circle cx="50" cy="50" r="38" class="omni-face"/>
+          <path d="M16 50 L50 22 L84 50 L50 78 Z" class="omni-diamond-dark"/>
+          <path d="M28 50 L50 32 L72 50 L50 68 Z" class="omni-diamond-green"/>
+        </svg>
+        <p class="footer-credit">Designed &amp; Developed by:<br/><strong>ZAIN UL ABIDEEN</strong></p>
+        <p class="footer-copy">Copyright © 2026 · All Rights Reserved.</p>
+        <p class="footer-official">Official university website: <a href="https://www.nu.edu.pk/" target="_blank" rel="noopener noreferrer">nu.edu.pk</a></p>
+      </div>
+
+      <div class="footer-social">
+        <span class="footer-social-label">Connect</span>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-scanline" aria-hidden="true"></div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-wrap" id="toastWrap" aria-live="assertive"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
