@@ -37,11 +37,11 @@ CGPA = Total Quality Points of All Semesters ÷ Total Credit Hours Completed
 
 ## Usage
 
-Open Website: [https://www.nu.edu.pk/](https://www.nu.edu.pk/)
+Open Website: [GPA Calc X Omnnitrix](https://zainsiddiqui4.github.io/GPA-Calculator---Omnitrix-Edition/)
 
 ## Author
 
-Developed by Zai Ul Abideen — a WebDev project combining practical academic tooling with creative visual design.
+Developed by Zain Ul Abideen — a WebDev project combining practical academic tooling with creative visual design.
 
 ## License
 
